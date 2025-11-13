@@ -17,7 +17,7 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jmnMentesActionPerformed"/>
               </Events>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="jmnKilepes">
+            <MenuItem class="javax.swing.JMenuItem" name="jmnBetoltes">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Bet&#xf6;lt&#xe9;s"/>
               </Properties>
@@ -36,7 +36,7 @@
     </Menu>
   </NonVisualComponents>
   <Properties>
-    <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="defaultCloseOperation" type="int" value="0"/>
     <Property name="title" type="java.lang.String" value="Light On J&#xe1;t&#xe9;k"/>
     <Property name="resizable" type="boolean" value="false"/>
   </Properties>

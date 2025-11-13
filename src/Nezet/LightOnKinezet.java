@@ -19,6 +19,15 @@ public class LightOnKinezet extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
     }
 
+    public JMenuItem getJmnKilepes() {
+        return jmnBetoltes;
+    }
+
+    public JMenuItem getJmnBetoltes() {
+        return jmnBetoltes;
+    }
+
+
     public JTextField getFelhasznalonev() {
         return Felhasznalonev;
     }
@@ -29,6 +38,10 @@ public class LightOnKinezet extends javax.swing.JFrame {
 
     public JButton getBtnUjJatek() {
         return btnUjJatek;
+    }
+
+    public JMenuItem getJmnMentes() {
+        return jmnMentes;
     }
 
     public JButton getjButton10() {
@@ -106,9 +119,6 @@ public class LightOnKinezet extends javax.swing.JFrame {
     public JMenuItem getMnKilep() {
         return mnKilep;
     }
-
-    
-
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -136,10 +146,10 @@ public class LightOnKinezet extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jmnMentes = new javax.swing.JMenuItem();
-        jmnKilepes = new javax.swing.JMenuItem();
+        jmnBetoltes = new javax.swing.JMenuItem();
         mnKilep = new javax.swing.JMenuItem();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Light On Játék");
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -307,8 +317,8 @@ public class LightOnKinezet extends javax.swing.JFrame {
         });
         jMenu1.add(jmnMentes);
 
-        jmnKilepes.setText("Betöltés");
-        jMenu1.add(jmnKilepes);
+        jmnBetoltes.setText("Betöltés");
+        jMenu1.add(jmnBetoltes);
 
         mnKilep.setText("Kilépés");
         mnKilep.addActionListener(new java.awt.event.ActionListener() {
@@ -345,25 +355,13 @@ public class LightOnKinezet extends javax.swing.JFrame {
     private void FelhasznalonevActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FelhasznalonevActionPerformed
        
     }//GEN-LAST:event_FelhasznalonevActionPerformed
-    private void kilepes(){
-        JOptionPane.showMessageDialog(rootPane, "Biztosan kilépsz?");
-        String uzenet="Biztosan?";
-        String cim="Kilépsz?";
-        int gombok = JOptionPane.YES_NO_OPTION;
-        int tipus = JOptionPane.QUESTION_MESSAGE;
-        int valasz = JOptionPane.showConfirmDialog(rootPane, uzenet, cim,gombok, tipus);
-        if (valasz ==JOptionPane.YES_OPTION) {
-            final int HIBA_KOD = 0;
-            System.exit(HIBA_KOD);
-        }
-    }
-
+  
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-        kilepes();
+    
     }//GEN-LAST:event_formWindowClosing
 
     private void mnKilepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnKilepActionPerformed
-       kilepes();
+     
     }//GEN-LAST:event_mnKilepActionPerformed
 
     private void btnUjJatekActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUjJatekActionPerformed
@@ -397,7 +395,7 @@ public class LightOnKinezet extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JMenuItem jmnKilepes;
+    private javax.swing.JMenuItem jmnBetoltes;
     private javax.swing.JMenuItem jmnMentes;
     private javax.swing.JLabel lblFelhasznalo;
     private javax.swing.JLabel lblJatekosNev;

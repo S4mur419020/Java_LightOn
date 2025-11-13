@@ -16,7 +16,9 @@ public class LightOnModel {
     
     public void ujraGomb(){
         lampak=new boolean[3][3];
-        lampak[1][1]=true;
+        int sor=(int)(Math.random()*3);
+        int oszlop=(int)(Math.random()*3);
+        lampak[sor][oszlop]=true;
         lepesek=0;
         Felhasznalo="";
     }
