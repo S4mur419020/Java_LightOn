@@ -3,7 +3,6 @@ package Controll;
 import Nezet.LightOnKinezet;
 import Model.LightOnModel;
 import java.awt.Color;
-import java.awt.List;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -305,3 +304,4 @@ public class LightONJatekVezerlo {
         }
     }
 }
+ 
