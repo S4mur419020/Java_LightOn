@@ -58,7 +58,44 @@ public class LightONJatekVezerlo {
             nezet.getBtnUjJatek().addActionListener(e -> ujraindit());
             nezet.getBtnOK().addActionListener(new Felhasznalo());
 
-            
+            nezet.getJmnBetoltes().addActionListener(e -> {
+                JFileChooser jfc = new JFileChooser(System.getProperty("user.dir"));
+                int valasztas = jfc.showOpenDialog(nezet);
+
+                if (valasztas == JFileChooser.APPROVE_OPTION) {
+                    File fajl = jfc.getSelectedFile();
+                    try {
+                        var sorok = Files.readAllLines(fajl.toPath());
+
+                        if (sorok.size() < 5) {
+                            JOptionPane.showMessageDialog(nezet, "Érvénytelen mentés!");
+                            return;
+                        }
+
+                        model.setFelhasznalo(sorok.get(0));
+                        nezet.getLblFelhasznalo().setText(model.getFelhasznalo());
+
+                        model.setLepesek(Integer.parseInt(sorok.get(1)));
+                        nezet.getLblSzamoltLepes().setText(String.valueOf(model.getLepesek()));
+
+                        boolean[][] lampak = new boolean[3][3];
+                        for (int i = 0; i < 3; i++) {
+                            String[] adatok = sorok.get(i + 2).split(",");
+                            for (int j = 0; j < 3; j++) {
+                                lampak[i][j] = adatok[j].equals("1");
+                            }
+                        }
+                        model.setLampak(lampak);
+
+                        frissit();
+
+                        JOptionPane.showMessageDialog(nezet, "Betöltés sikeres!");
+                    } catch (IOException | NumberFormatException | IndexOutOfBoundsException ex) {
+                        JOptionPane.showMessageDialog(nezet, "Betöltés sikertelen!\n" + ex.getMessage());
+                        ex.printStackTrace();
+                    }
+                }
+            });
 
             for (int i = 0; i < 3; i++) {
                 for (int j = 0; j < 3; j++) {
