@@ -35,7 +35,25 @@ public class LightONJatekVezerlo {
             };
             nezet.getMnKilep().addActionListener(e -> kilepes());
 
-            
+            nezet.getJmnMentes().addActionListener(e -> {
+                try {
+                    String hely = System.getProperty("user.dir");
+                    JFileChooser jfc = new JFileChooser(hely);
+
+                    File kivalasztottFajl = new File(hely + "\\" + model.getFelhasznalo() + ".txt");
+                    jfc.setSelectedFile(kivalasztottFajl);
+
+                    int gomb = jfc.showSaveDialog(nezet);
+                    if (gomb == JFileChooser.APPROVE_OPTION) {
+                        kivalasztottFajl = jfc.getSelectedFile();
+                        Path path = kivalasztottFajl.toPath();
+                        Files.writeString(path, tartalom());
+                    }
+                } catch (IOException ex) {
+                    JOptionPane.showMessageDialog(nezet, "Hiba a mentés során:\n" + ex.getMessage());
+                    ex.printStackTrace();
+                }
+            });
 
             nezet.getBtnUjJatek().addActionListener(e -> ujraindit());
             nezet.getBtnOK().addActionListener(new Felhasznalo());
